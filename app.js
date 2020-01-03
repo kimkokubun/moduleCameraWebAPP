@@ -1,12 +1,16 @@
 // Set constraints for the video stream
 var front = false;
-document.querySelector("#camera--switch").onclick = function() { front = !front; };
+
+//document.getElementById("#camera--switch").onclick = function() { front = !front; };
 var constraints = { video: { facingMode: (front? "user" : "environment") } };
+document.write(front);
 
 const cameraView = document.querySelector("#camera--view"),
     cameraOutput = document.querySelector("#camera--output"),
     cameraSensor = document.querySelector("#camera--sensor"),
-    cameraTrigger = document.querySelector("#camera--trigger")// Access the device camera and stream to cameraView
+    cameraTrigger = document.querySelector("#camera--trigger"),
+    cameraSwitch = document.querySelector("#camera--switch");
+
 function cameraStart() {
     navigator.mediaDevices
         .getUserMedia(constraints)
@@ -18,6 +22,7 @@ function cameraStart() {
         console.error("Oops. Something is broken.", error);
     });
 }// Take a picture when cameraTrigger is tapped
+cameraSwitch.onclick =  function() {front = !front;};
 cameraTrigger.onclick = function() {
     cameraSensor.width = cameraView.videoWidth;
     cameraSensor.height = cameraView.videoHeight;
