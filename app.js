@@ -4,8 +4,7 @@ var constraints = { video: { facingMode: "environment" }, audio: false };
 const cameraView = document.querySelector("#camera--view"),
     cameraOutput = document.querySelector("#camera--output"),
     cameraSensor = document.querySelector("#camera--sensor"),
-    cameraTrigger = document.querySelector("#camera--trigger"),
-    cameraSwitch = document.querySelector"camera--switch")
+    cameraTrigger = document.querySelector("#camera--trigger")
 function cameraStart() {
     navigator.mediaDevices
         .getUserMedia(constraints)
