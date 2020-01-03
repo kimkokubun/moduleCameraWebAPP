@@ -1,5 +1,5 @@
 // Set constraints for the video stream
-var constraints = { video: { facingMode: "user" }, audio: false };
+var constraints = { video: { facingMode: "environment" }, audio: false };
 
 const cameraView = document.querySelector("#camera--view"),
     cameraOutput = document.querySelector("#camera--output"),
@@ -24,7 +24,4 @@ cameraTrigger.onclick = function() {
     cameraOutput.src = cameraSensor.toDataURL("image/webp");
     cameraOutput.classList.add("taken");
 };
-cameraSwitch.onclick = function(){
-    constraints = { video: { facingMode: "environment" }, audio: false };
-}
 window.addEventListener("load", cameraStart, false);
