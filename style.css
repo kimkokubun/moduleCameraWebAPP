@@ -33,6 +33,7 @@ html, body{
     top: 20px;
     right: 20px;
     z-index: 2;
+/*
 }#camera--switch{
     width: 150px;
     background-color: red;
@@ -46,4 +47,4 @@ html, body{
     position: fixed;
     bottom: 30px;
     right: calc(50% - 250px);
-}
+}*/
