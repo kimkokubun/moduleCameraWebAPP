@@ -2,8 +2,8 @@
 var front = false;
 
 //document.getElementById("#camera--switch").onclick = function() { front = !front; };
-var constraints = { video: { facingMode: (front? "user" : "environment") } };
-document.write(front);
+var constraints = { video: { facingMode: (front? "user" : "environment") }, audio: false};
+
 
 const cameraView = document.querySelector("#camera--view"),
     cameraOutput = document.querySelector("#camera--output"),
@@ -22,7 +22,10 @@ function cameraStart() {
         console.error("Oops. Something is broken.", error);
     });
 }// Take a picture when cameraTrigger is tapped
-cameraSwitch.onclick =  function() {front = !front;};
+cameraSwitch.onclick =  function() {
+    console.error(front);
+    front = !front;
+};
 cameraTrigger.onclick = function() {
     cameraSensor.width = cameraView.videoWidth;
     cameraSensor.height = cameraView.videoHeight;
